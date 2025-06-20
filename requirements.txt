@@ -1,0 +1,7 @@
+llama-index
+pypdf
+llama-index-llms-huggingface
+llama-index-embeddings-huggingface
+faiss-cpu
+llama-index-vector-stores-faiss
+groq
