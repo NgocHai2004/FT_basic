@@ -12,4 +12,5 @@ class Load_Data:
         self.data:str = data
 
     def Load(self):
-        pass
+        return SimpleDirectoryReader(self.data).load_data()
+    
