@@ -1,14 +1,9 @@
 import sys
 import os
-
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-
-
-from package import(
-    torch,
-    RAGPipeline
-)
+import torch
+from package import RAGPipeline
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5", device=device)
 

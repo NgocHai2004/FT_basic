@@ -1,9 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from package import (
-    Groq
-)
+from groq import Groq
 
 class QuestionAnswering:
     def __init__(self, api_key, model_name):
