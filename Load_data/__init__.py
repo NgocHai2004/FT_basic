@@ -1,16 +1,11 @@
-import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from package import (
-    SimpleDirectoryReader
-)
 class Load_Data:
-    def __init__(self,data:str):
+    def __init__(self,path_folder:str):
         '''
-        data: thư mục chứa các file pdf
+        path_folder: thư mục chứa các file pdf
         '''
-        self.data:str = data
+        self.path_folder:str = path_folder
 
-    def Load(self):
-        return SimpleDirectoryReader(self.data).load_data()
+    def load(self):
+        return Load_Data(self.path_folder).Load()
     

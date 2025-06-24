@@ -3,17 +3,18 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from package import (
     HuggingFaceEmbedding,
-    SemanticSplitterNodeParser
+    SemanticSplitterNodeParser,
+    SentenceSplitter
 )
 
 class Convert:
-    def __init__(self,model_embedding):
+    def __init__(self, embed_model):
         '''
-        model_embedding: tên model mà mình dùng để embedding text
+        embed_model : model để embedding
         '''
-        self.model_embedding = model_embedding
+        self.embed_model = embed_model
+        self.node_parser = SentenceSplitter()
+
+    def embed_documents(self, documents):
+        return self.node_parser.get_nodes_from_documents(documents)
     
-    def model_embedd(self):
-        return SemanticSplitterNodeParser(
-    buffer_size = 1, breakpoint_percentile_threshold = 95,embed_model = self.model_embedding
-)
